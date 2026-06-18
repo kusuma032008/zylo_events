@@ -335,9 +335,10 @@ input, textarea, select { font-family: inherit; }
 @media (min-width: 1024px) { .nav-links { display: flex; } }
 
 .nav-link {
-  font-size: 0.87rem;
-  font-weight: 500;
-  color: var(--text-mid);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
   padding: 8px 14px;
   border-radius: var(--radius);
   transition: all var(--transition);
@@ -613,7 +614,7 @@ input, textarea, select { font-family: inherit; }
 }
 
 .hero-title span {
-  font-family: 'Playball', 'Great Vibes', 'Pinyon Script', cursive;
+  font-family: 'Playfair Display', serif;
   color: #1e3a8a;
   text-transform: none;
   font-weight: 600;
@@ -1277,7 +1278,9 @@ input, textarea, select { font-family: inherit; }
   font-weight: 900;
   background: linear-gradient(135deg, var(--brand-light) 0%, var(--teal) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   opacity: 0.35;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.4s ease;
