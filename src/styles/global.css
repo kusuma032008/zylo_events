@@ -615,17 +615,13 @@ input, textarea, select { font-family: inherit; }
 
 .hero-title span {
   font-family: 'Playfair Display', serif;
-  color: #1e3a8a;
+  color: #60a5fa;
   text-transform: none;
   font-weight: 600;
   letter-spacing: 0.02em;
   font-size: 1.35em;
   display: inline-block;
-  text-shadow: 
-    0 0 4px #ffffff,
-    0 0 8px #ffffff,
-    0 0 16px #ffffff,
-    0 2px 5px rgba(15, 23, 42, 0.45);
+  text-shadow: 0 2px 5px rgba(15, 23, 42, 0.45);
 }
 
 .hero-subtitle {
