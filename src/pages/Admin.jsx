@@ -11,15 +11,16 @@ import {
   updateDoc
 } from 'firebase/firestore';
 export default function Admin() {
+  const [employees, setEmployees] = useState([]);
   const handleLogout = async () => {
   await signOut(auth);
 };
-  const [employees, setEmployees] = useState([]);
-  const [form, setForm] = useState({
+const [form, setForm] = useState({
   name: '',
   role: '',
   description: '',
-  image: ''
+  image: '',
+  order: ''
 });
 
 const [imageFile, setImageFile] = useState(null);
@@ -54,7 +55,8 @@ const editEmployee = (employee) => {
     name: employee.name || '',
     role: employee.role || '',
     description: employee.description || '',
-    image: employee.image || ''
+    image: employee.image || '',
+    order: employee.order || ''
   });
 };
 
@@ -91,30 +93,32 @@ const addEmployee = async (e) => {
 
   const employeeDoc = doc(db, 'employees', editingId);
 
-  await updateDoc(employeeDoc, {
-    name: form.name,
-    role: form.role,
-    description: form.description,
-    image: imageUrl || form.image
-  });
+ await updateDoc(employeeDoc, {
+  name: form.name,
+  role: form.role,
+  description: form.description,
+  image: imageUrl || form.image,
+  order: Number(form.order)
+});
 
 } else {
 
-  await addDoc(employeesCollection, {
-    name: form.name,
-    role: form.role,
-    description: form.description,
-    image: imageUrl
-  });
-
+await addDoc(employeesCollection, {
+  name: form.name,
+  role: form.role,
+  description: form.description,
+  image: imageUrl,
+  order: Number(form.order)
+});
 }
 
-  setForm({
-    name: '',
-    role: '',
-    description: '',
-    image: ''
-  });
+ setForm({
+  name: '',
+  role: '',
+  description: '',
+  image: '',
+  order: ''
+});
 
   setImageFile(null);
   setEditingId(null);
@@ -171,6 +175,13 @@ const addEmployee = async (e) => {
           name="description"
           placeholder="Description"
           value={form.description}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="order"
+          placeholder="Display Order"
+          value={form.order}
           onChange={handleChange}
         />
         <input

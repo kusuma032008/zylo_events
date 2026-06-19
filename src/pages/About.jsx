@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
 import SEO from '../components/shared/SEO';
 import SectionHeader from '../components/shared/SectionHeader';
@@ -124,16 +124,21 @@ export default function About() {
     fetchEmployees();
   }, []);
 
-  const fetchEmployees = async () => {
-    const data = await getDocs(collection(db, 'employees'));
+const fetchEmployees = async () => {
+  const q = query(
+    collection(db, 'employees'),
+    orderBy('order', 'asc')
+  );
 
-    setTeamMembers(
-      data.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data()
-      }))
-    );
-  };
+  const data = await getDocs(q);
+
+  setTeamMembers(
+    data.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()
+    }))
+  );
+};
   return (
     <>
       <SEO
