@@ -78,7 +78,7 @@ export default function ServicesSummary() {
           <h3 className="services-group-title">
             <span className="gold-label">Corporate Events</span>
           </h3>
-          <div className="services-grid">
+          <div className="services-grid bento-5">
             {corporateServices.map((service, idx) => (
               <article
                 key={idx}
@@ -114,7 +114,7 @@ export default function ServicesSummary() {
           <h3 className="services-group-title">
             <span className="gold-label">Exhibition &amp; Trade Shows</span>
           </h3>
-          <div className="services-grid">
+          <div className="services-grid bento-4">
             {expoServices.map((service, idx) => (
               <article
   key={idx}
