@@ -250,7 +250,7 @@ const fetchEmployees = async () => {
             <div className="section-header reveal" style={{ marginBottom: '48px' }}>
               <span className="section-tag">What Drives Us</span>
               <h2 className="section-title white">
-                Mission, Vision &amp; <span style={{ color: '#BAE6FD' }}>Values</span>
+                Mission, Vision &amp; <span style={{ color: '#2563EB' }}>Values</span>
               </h2>
             </div>
             <div className="mission-vision-grid reveal">
