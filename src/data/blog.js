@@ -84,7 +84,7 @@ export const blogPosts = [
     categoryLabel: 'Award Ceremonies',
     date: 'October 22, 2025',
     author: 'Logistics Lead',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&q=80',
     excerpt: 'A comprehensive guide to planning, executing, and hosting memorable corporate award ceremonies that honor your best talent.'
   }
 ];
