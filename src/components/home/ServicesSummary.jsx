@@ -65,7 +65,7 @@ const expoServices = [
 export default function ServicesSummary() {
    const navigate = useNavigate();
   return (
-    <section className="services-section section-pad-lg bg-gray" id="services" aria-labelledby="services-title">
+    <section className="services-section section-pad-lg bg-gray" id="services" aria-labelledby="services-title" style={{ paddingTop: '40px' }}>
       <div className="container">
         <SectionHeader
           tag="What We Do"

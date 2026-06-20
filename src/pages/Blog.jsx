@@ -361,7 +361,7 @@ console.log(filteredPosts);
         >
           <div className="cta-banner-overlay"></div>
           <div className="container cta-banner-content reveal">
-            <h2>Ready to Plan Your Next<br />Extraordinary Event?</h2>
+            <h2>Ready to Plan Your Next<br /><span style={{ color: '#60A5FA' }}>Extraordinary Event?</span></h2>
             <p>Let Zylo Events bring your vision to life. Contact us for a free consultation today.</p>
             <Button to="/contact" variant="outline-white" size="lg">
               Get in Touch →

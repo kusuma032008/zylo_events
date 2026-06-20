@@ -284,7 +284,7 @@ export default function CorporateEvents() {
         >
           <div className="cta-banner-overlay"></div>
           <div className="container cta-banner-content reveal">
-            <h2>Ready to Plan Your Next<br />Corporate Event?</h2>
+            <h2>Ready to Plan Your Next<br /><span style={{ color: '#60A5FA' }}>Corporate Event?</span></h2>
             <p>Contact us today and receive a tailored proposal within 24 hours.</p>
             <Button to="/contact" variant="outline-white" size="lg">
               Get a Free Consultation →

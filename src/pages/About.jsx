@@ -245,7 +245,7 @@ const fetchEmployees = async () => {
         </section>
 
         {/* Mission, Vision & Values */}
-        <section className="section-pad-lg mission-vision-section">
+        <section className="mission-vision-section" style={{ padding: '0 0 96px' }}>
           <div className="container">
             <div className="section-header reveal" style={{ marginBottom: '48px' }}>
               <span className="section-tag">What Drives Us</span>
@@ -302,6 +302,7 @@ const fetchEmployees = async () => {
               tag="Leadership &amp; Vision"
               title={<>Leadership Behind <span style={{ color: 'var(--brand)' }}>Extraordinary Events</span></>}
               subtitle="Our executive committee brings together industry-leading operations strategy, luxury spatial design, and world-class event production to deliver unparalleled brand experiences across India."
+              white={true}
             />
 
             <div className="leadership-grid reveal">
@@ -334,11 +335,13 @@ const fetchEmployees = async () => {
                   </div>
                   <h3 className="leader-name">{member.name}</h3>
                   <span className="leader-role">{member.role}</span>
-                 <div className="leader-traits">
-                  <span className="trait-tag">
-                    {member.role}
-                  </span>
-                 </div>
+                  {member.traits && member.traits.length > 0 && (
+                    <div className="leader-traits">
+                      {member.traits.map((trait, tIdx) => (
+                        <span key={tIdx} className="trait-tag">{trait}</span>
+                      ))}
+                    </div>
+                  )}
                   <p className="leader-bio">{member.description}</p>
                   <div className="leader-socials">
                     <a
@@ -394,7 +397,7 @@ const fetchEmployees = async () => {
         >
           <div className="cta-banner-overlay"></div>
           <div className="container cta-banner-content reveal">
-            <h2>Where Corporate Events<br />Become Experiential Milestones</h2>
+            <h2>Where Corporate Events<br />Become <span style={{ color: '#60A5FA' }}>Experiential Milestones</span></h2>
             <p>Let's discuss your next brand activations, conferences, or spatial installations. Connect with our experiential strategy leads today.</p>
             <Button to="/contact" variant="gold" size="lg">
               Get in Touch →

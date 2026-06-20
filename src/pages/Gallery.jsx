@@ -30,7 +30,7 @@ export default function Gallery() {
               <span className="badge-dot"></span> 800+ Events Delivered
             </div>
             <h1 className="animate-fade-up">
-              Experiential <span style={{ color: '#BAE6FD' }}>Showcase</span>
+              Experiential <span style={{ color: '#60A5FA' }}>Showcase</span>
             </h1>
             <p className="animate-fade-up">
               A visual journey through premium corporate productions, luxury brand activations, and state-of-the-art experiential setups crafted by Zylo since 2011.
@@ -157,7 +157,7 @@ export default function Gallery() {
         >
           <div className="cta-banner-overlay"></div>
           <div className="container cta-banner-content reveal">
-            <h2>Want Your Event to Look<br />This Extraordinary?</h2>
+            <h2>Want Your Event to Look<br />This <span style={{ color: '#60A5FA' }}>Extraordinary?</span></h2>
             <p>Let's plan something unforgettable together. Contact Zylo Events today.</p>
             <Button to="/contact" variant="outline-white" size="lg">
               Get a Free Quote →

@@ -209,7 +209,7 @@ export default function Home() {
         >
           <div className="cta-banner-overlay"></div>
           <div className="cta-banner-content reveal">
-            <h2>Looking for Premium Corporate<br />&amp; Experiential Event Specialists?</h2>
+            <h2>Looking for Premium Corporate<br />&amp; <span style={{ color: '#60A5FA' }}>Experiential Event Specialists?</span></h2>
             <p>We turn brand strategies into high-impact physical realities. Connect with Zylo Events, a specialized brand by Alankaran, to discuss your next experiential showcase.</p>
             <Button to="/contact" variant="outline-white" size="lg">
               Book Your Event Now

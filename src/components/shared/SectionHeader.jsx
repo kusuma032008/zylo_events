@@ -25,17 +25,17 @@ export default function SectionHeader({
       style={alignLeft ? { textAlign: 'left', margin: '0 0 44px', maxWidth: 'none' } : undefined}
     >
       {tag && (
-        <span className={clsx('section-tag', { 'section-tag-gold': white })}>
+        <span className={clsx('section-tag', { 'section-tag-gold': white })} style={white ? { background: 'rgba(255,255,255,0.1)', color: '#ffffff', borderColor: 'rgba(255,255,255,0.2)' } : undefined}>
           {tag}
         </span>
       )}
       {title && (
-        <h2 className={clsx('section-title', { white: white })}>
+        <h2 className="section-title" style={white ? { color: '#ffffff' } : undefined}>
           {title}
         </h2>
       )}
       {subtitle && (
-        <p className={clsx('section-subtitle', { 'white-60': white })}>
+        <p className="section-subtitle" style={white ? { color: 'rgba(255,255,255,0.9)' } : undefined}>
           {subtitle}
         </p>
       )}

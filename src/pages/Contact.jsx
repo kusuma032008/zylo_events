@@ -246,7 +246,7 @@ export default function Contact() {
         >
           <div className="cta-banner-overlay"></div>
           <div className="container cta-banner-content reveal">
-            <h2>Let's Make Your Next Event<br />Truly Unforgettable</h2>
+            <h2>Let's Make Your Next Event<br /><span style={{ color: '#60A5FA' }}>Truly Unforgettable</span></h2>
             <p>Call us now or fill in our contact form — we'd love to hear about your vision.</p>
             <Button href="tel:+919876543210" variant="outline-white" size="lg">
               Call +91 98765 43210

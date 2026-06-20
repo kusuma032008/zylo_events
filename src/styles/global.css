@@ -1638,48 +1638,60 @@ input, textarea, select { font-family: inherit; }
 .zp-logo {
   width: 160px;
   height: 160px;
-  background: rgba(255,255,255,0.12);
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.02) 100%);
   border-radius: var(--radius-xl);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 16px 40px rgba(0,0,0,0.3), 0 0 30px rgba(56,189,248,0.15);
   border: 1px solid rgba(255,255,255,0.2);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.zp-logo:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.5), 0 24px 48px rgba(0,0,0,0.4), 0 0 50px rgba(56,189,248,0.3);
+  border-color: rgba(255,255,255,0.4);
 }
 
 .zp-z {
   font-family: var(--font-sans);
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 900;
-  color: var(--white);
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1;
-  letter-spacing: -4px;
+  letter-spacing: -2px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(4px 0px 8px rgba(0,0,0,0.25));
 }
 
 .zp-p {
   font-family: var(--font-sans);
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 900;
-  color: #BAE6FD;
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   line-height: 1;
-  margin-left: 4px;
-  letter-spacing: -4px;
+  margin-left: -12px;
+  letter-spacing: -2px;
+  position: relative;
+  z-index: 1;
 }
 
-.zp-z, .zp-p { display: inline; }
-
-.zp-logo > :first-child { display: flex; align-items: center; }
-
 .zp-tagline {
-  font-size: 0.55rem;
-  letter-spacing: 3px;
-  color: rgba(255,255,255,0.5);
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
   text-transform: uppercase;
   position: absolute;
-  bottom: 16px;
+  bottom: 18px;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -2336,7 +2348,7 @@ input, textarea, select { font-family: inherit; }
 .inner-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.25) 100%);
+  background: rgba(15, 23, 42, 0.75);
 }
 
 .inner-hero-content {
@@ -2469,20 +2481,20 @@ input, textarea, select { font-family: inherit; }
 }
 
 .leadership-card {
-  background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 40px 32px;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.7), rgba(2, 6, 23, 0.9));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 28px;
+  padding: 48px 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 15px 35px rgba(0, 0, 0, 0.4);
   height: 100%;
 }
 
@@ -2493,7 +2505,7 @@ input, textarea, select { font-family: inherit; }
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(320px circle at var(--x, 0px) var(--y, 0px), rgba(59, 130, 246, 0.12), transparent 50%);
+  background: radial-gradient(400px circle at var(--x, 0px) var(--y, 0px), rgba(251, 191, 36, 0.1), transparent 60%);
   z-index: 1;
   pointer-events: none;
   opacity: 0;
@@ -2505,32 +2517,32 @@ input, textarea, select { font-family: inherit; }
 }
 
 .leadership-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(59, 130, 246, 0.35);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.18);
+  transform: translateY(-12px);
+  border-color: rgba(251, 191, 36, 0.25);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(251, 191, 36, 0.1);
 }
 
 .avatar-container {
   position: relative;
-  width: 160px;
-  height: 160px;
-  margin-bottom: 24px;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 32px;
   z-index: 2;
 }
 
 .avatar-ring {
   position: absolute;
-  inset: -6px;
+  inset: -8px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--brand, #3B82F6), #14B8A6, transparent 65%);
-  padding: 2px;
-  animation: rotateRing 15s linear infinite;
-  opacity: 0.85;
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, transparent 65%);
+  padding: 3px;
+  animation: rotateRing 20s linear infinite;
+  opacity: 0.9;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .leadership-card:hover .avatar-ring {
-  transform: rotate(180deg) scale(1.05);
+  transform: rotate(180deg) scale(1.06);
 }
 
 .avatar-image-wrapper {
@@ -2538,9 +2550,10 @@ input, textarea, select { font-family: inherit; }
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #0f172a;
+  border: 4px solid #020617;
   position: relative;
   background: #1e293b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .avatar-image {
@@ -2548,30 +2561,30 @@ input, textarea, select { font-family: inherit; }
   height: 100%;
   object-fit: cover;
   object-position: top;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .leadership-card:hover .avatar-image {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .leader-name {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  color: var(--white, #ffffff);
-  margin-bottom: 6px;
-  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
   z-index: 2;
 }
 
 .leader-role {
-  font-size: 0.8rem;
-  color: var(--brand, #3B82F6);
+  font-size: 0.85rem;
+  color: #fbbf24;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 16px;
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
   z-index: 2;
 }
 
@@ -2580,34 +2593,34 @@ input, textarea, select { font-family: inherit; }
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   z-index: 2;
 }
 
 .trait-tag {
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.15);
-  color: #bae6fd;
-  font-size: 0.68rem;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  font-size: 0.7rem;
   font-weight: 600;
-  padding: 4px 10px;
+  padding: 6px 14px;
   border-radius: 100px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: all 0.3s ease;
 }
 
 .leadership-card:hover .trait-tag {
-  background: rgba(59, 130, 246, 0.12);
-  border-color: rgba(59, 130, 246, 0.3);
-  transform: scale(1.02);
+  background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.35);
+  transform: scale(1.03);
 }
 
 .leader-bio {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #94a3b8;
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.7;
+  margin-bottom: 28px;
   flex: 1;
   z-index: 2;
 }
@@ -2620,11 +2633,11 @@ input, textarea, select { font-family: inherit; }
 }
 
 .leader-social-btn {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2633,10 +2646,10 @@ input, textarea, select { font-family: inherit; }
 }
 
 .leader-social-btn:hover {
-  background: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.4);
-  color: var(--white, #ffffff);
-  transform: translateY(-2px);
+  background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.4);
+  color: #fbbf24;
+  transform: translateY(-3px);
 }
 
 @keyframes rotateRing {
@@ -3364,63 +3377,9 @@ input, textarea, select { font-family: inherit; }
   color: #475569 !important;
 }
 
-/* 4. Redesigned Leadership Section */
-.about-page .leadership-section {
-  background: radial-gradient(circle at 10% 30%, rgba(59, 130, 246, 0.02), transparent 40%),
-              radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.02), transparent 40%),
-              #ffffff !important;
-  border-top: 1px solid #e2e8f0 !important;
-  border-bottom: 1px solid #e2e8f0 !important;
-  position: relative;
-  padding-top: 110px;
-  padding-bottom: 110px;
-}
 
-.about-page .leadership-section h2 {
-  color: #0f172a !important;
-}
 
-.about-page .leadership-card {
-  background: rgba(255, 255, 255, 0.7) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(226, 232, 240, 0.8) !important;
-  box-shadow: 0 15px 40px rgba(148, 163, 184, 0.05) !important;
-}
 
-.about-page .leadership-card::before {
-  background: radial-gradient(320px circle at var(--x, 0px) var(--y, 0px), rgba(59, 130, 246, 0.08), transparent 50%) !important;
-}
-
-.about-page .leadership-card:hover {
-  border-color: rgba(59, 130, 246, 0.25) !important;
-  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.07) !important;
-}
-
-.about-page .leadership-card .avatar-image-wrapper {
-  border-color: #ffffff !important;
-  box-shadow: 0 8px 25px rgba(148, 163, 184, 0.12);
-}
-
-.about-page .leader-name {
-  color: #0f172a !important;
-}
-
-.about-page .leader-bio {
-  color: #64748b !important;
-}
-
-.about-page .leader-social-btn {
-  background: rgba(148, 163, 184, 0.04) !important;
-  border: 1px solid rgba(148, 163, 184, 0.12) !important;
-  color: #64748b !important;
-}
-
-.about-page .leader-social-btn:hover {
-  background: rgba(59, 130, 246, 0.08) !important;
-  border-color: rgba(59, 130, 246, 0.25) !important;
-  color: var(--brand, #3B82F6) !important;
-}
 
 /* 5. Awards & Recognition Section */
 .about-page .awards-section {

@@ -56,6 +56,36 @@ export const blogPosts = [
     author: 'Logistics Lead',
     image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80',
     excerpt: 'Award nights celebrate the highest achievements. Discover our secret recipe for run-of-show timing, host rehearsals, prestige red-carpet lighting, and stage reveals that leave attendees in awe.'
+  },
+  {
+    id: 6,
+    title: 'Designing Future-Ready Brand Activations',
+    category: 'tradeshows',
+    categoryLabel: 'Trade Shows',
+    date: 'December 05, 2025',
+    author: 'Experiential Strategist',
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80',
+    excerpt: 'Explore the future of brand activations with immersive technologies like AR, VR, and kinetic displays that leave lasting impressions.'
+  },
+  {
+    id: 7,
+    title: '5 Creative Team Building Activities That Boost Morale',
+    category: 'teambuilding',
+    categoryLabel: 'Team Building',
+    date: 'November 18, 2025',
+    author: 'HR Specialist',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
+    excerpt: 'Boost team morale with these interactive and engaging activities tailored for corporate groups of all sizes.'
+  },
+  {
+    id: 8,
+    title: 'Recognizing Excellence: The Ultimate Guide to Corporate Awards',
+    category: 'awards',
+    categoryLabel: 'Award Ceremonies',
+    date: 'October 22, 2025',
+    author: 'Logistics Lead',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80',
+    excerpt: 'A comprehensive guide to planning, executing, and hosting memorable corporate award ceremonies that honor your best talent.'
   }
 ];
 

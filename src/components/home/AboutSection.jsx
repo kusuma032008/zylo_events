@@ -3,7 +3,7 @@ import Button from '../shared/Button';
 
 export default function AboutSection() {
   return (
-    <section className="about-section section-pad-lg" id="about" aria-labelledby="about-title">
+    <section className="about-section section-pad-lg" id="about" aria-labelledby="about-title" style={{ paddingBottom: '40px' }}>
       <div className="container about-grid">
         <div className="about-content reveal">
           <span className="section-tag">About Zylo</span>
