@@ -6,7 +6,7 @@ import React from 'react';
 export default function WhatsappBtn() {
   return (
     <a
-      href="https://wa.me/919876543210"
+      href="https://wa.me/918977611886"
       className="whatsapp-btn"
       target="_blank"
       rel="noopener noreferrer"

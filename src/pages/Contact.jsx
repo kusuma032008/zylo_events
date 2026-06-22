@@ -95,7 +95,13 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--text-dark)' }}>Our Office</h4>
-                  <p style={{ color: 'var(--text-light)', fontSize: '0.93rem', marginTop: '4px' }}>Banjara Hills, Hyderabad, Telangana 500001, India</p>
+                  <p style={{ color: 'var(--text-light)', fontSize: '0.93rem', marginTop: '4px', lineHeight: '1.5' }}>
+                    Corporate Office<br />
+                    Plot No. 78, TNGOs Colony,<br />
+                    Phase 2, Financial District,<br />
+                    Gachibowli, Hyderabad,<br />
+                    Telangana 500032
+                  </p>
                   <p style={{ color: 'var(--gray-text)', fontSize: '0.82rem', marginTop: '4px' }}>Also serving Mumbai &amp; Delhi</p>
                 </div>
               </div>
@@ -108,7 +114,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--text-dark)' }}>Call Us</h4>
-                  <a href="tel:+919876543210" style={{ color: 'var(--brand)', fontWeight: '600', fontSize: '0.93rem' }}>+91 98765 43210</a>
+                  <a href="tel:+918977611886" style={{ color: 'var(--brand)', fontWeight: '600', fontSize: '0.93rem' }}>+91 89776 11886</a>
                   <p style={{ color: 'var(--gray-text)', fontSize: '0.82rem', marginTop: '4px' }}>Mon – Sat, 9am – 6pm IST</p>
                 </div>
               </div>
@@ -144,14 +150,14 @@ export default function Contact() {
               {/* Office Map Frame */}
               <div className="map-embedreveal reveal" style={{ marginTop: '32px' }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5!2d78.4483!3d17.4156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90d17e2a5f95%3A0x7e9fbe5de63e4568!2sBanjara%20Hills%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.03968832049!2d78.3361113!3d17.4190283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93a8d9bfd4db%3A0xe543ef88ff3e4448!2sPlot%20No.%2078%2C%20TNGOs%20Colony%2C%20Phase%202%2C%20Financial%20District%2C%20Gachibowli%2C%20Hyderabad%2C%20Telangana%20500032!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
                   height="340"
                   style={{ border: 0, borderRadius: '12px', display: 'block', boxShadow: 'var(--shadow)' }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Zylo Events — Banjara Hills, Hyderabad"
+                  title="Zylo Events — Financial District, Gachibowli, Hyderabad"
                 ></iframe>
               </div>
             </div>
@@ -248,8 +254,8 @@ export default function Contact() {
           <div className="container cta-banner-content reveal">
             <h2>Let's Make Your Next Event<br /><span style={{ color: '#60A5FA' }}>Truly Unforgettable</span></h2>
             <p>Call us now or fill in our contact form — we'd love to hear about your vision.</p>
-            <Button href="tel:+919876543210" variant="outline-white" size="lg">
-              Call +91 98765 43210
+            <Button href="tel:+918977611886" variant="outline-white" size="lg">
+              Call +91 89776 11886
             </Button>
           </div>
         </section>

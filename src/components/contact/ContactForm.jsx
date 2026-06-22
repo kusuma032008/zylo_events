@@ -167,7 +167,7 @@ export default function ContactForm() {
           type="tel"
           id="phone"
           name="phone"
-          placeholder="+91 98765 43210"
+          placeholder="+91 89776 11886"
           value={formData.phone}
           onChange={handleChange}
           onBlur={handleBlur}

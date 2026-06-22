@@ -243,7 +243,7 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>Our Office</strong>
-                    <span>Banjara Hills, Hyderabad, Telangana 500001</span>
+                    <span>Plot No. 78, TNGOs Colony, Phase 2, Financial District, Gachibowli, Hyderabad, Telangana 500032</span>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -254,7 +254,7 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>Call Us</strong>
-                    <span><a href="tel:+919876543210">+91 98765 43210</a></span>
+                    <span><a href="tel:+918977611886">+91 89776 11886</a></span>
                   </div>
                 </div>
                 <div className="contact-item">
