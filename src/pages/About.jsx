@@ -404,31 +404,49 @@ const fetchEmployees = async () => {
           </div>
         </section>
 
-        {/* The Zylo Difference - Editorial Split-Screen Theme */}
-        <section className="split-editorial-section">
-          <div className="split-visual">
-            <div className="split-visual-overlay"></div>
-            <div className="split-visual-content">
-              <span className="split-tag reveal">The Zylo Difference</span>
-              <h2 className="split-title reveal">
+        {/* The Zylo Difference - Interactive Stacking Cards Theme */}
+        <section className="stacking-section bg-dark">
+          <div className="container">
+            <div className="stacking-header text-center reveal">
+              <span className="stacking-tag">The Zylo Difference</span>
+              <h2 className="stacking-title">
                 Why Leading Brands Choose Zylo
               </h2>
-              <p className="split-subtitle reveal">
+              <p className="stacking-subtitle">
                 We combine unparalleled scale with bespoke experiential design to deliver world-class corporate environments.
               </p>
             </div>
-          </div>
-          <div className="split-content-wrapper">
-            <div className="split-content-inner">
-              {zyloDifferences.map((item, idx) => (
-                <div key={idx} className="editorial-item reveal">
-                  <div className="editorial-number">0{idx + 1}</div>
-                  <div className="editorial-text">
-                    <h4 className="editorial-item-title">{item.title}</h4>
-                    <p className="editorial-item-desc">{item.desc}</p>
+
+            <div className="stacking-container">
+              {zyloDifferences.map((item, idx) => {
+                // Array of high-quality event images for each card
+                const images = [
+                  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80',
+                  'https://images.unsplash.com/photo-1511578314322-379f0747dda4?w=1200&q=80',
+                  'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&q=80',
+                  'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80',
+                  'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=1200&q=80',
+                  'https://images.unsplash.com/photo-1522158637959-30385a09e0aa?w=1200&q=80'
+                ];
+                
+                return (
+                  <div key={idx} className={`stack-card stack-card-${idx + 1}`}>
+                    <div className="stack-card-inner">
+                      <div className="stack-card-content">
+                        <div className="stack-watermark">0{idx + 1}</div>
+                        <div className="stack-icon-wrapper">
+                          {item.icon}
+                        </div>
+                        <h4 className="stack-card-title">{item.title}</h4>
+                        <p className="stack-card-desc">{item.desc}</p>
+                      </div>
+                      <div className="stack-card-image" style={{ backgroundImage: `url('${images[idx]}')` }}>
+                        <div className="stack-card-image-overlay"></div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
