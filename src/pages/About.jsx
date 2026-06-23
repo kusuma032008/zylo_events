@@ -404,39 +404,52 @@ const fetchEmployees = async () => {
           </div>
         </section>
 
-        {/* The Zylo Difference */}
-        <section 
-          className="section-pad-lg zylo-difference-section bg-dark"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1600&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
-            position: 'relative'
-          }}
-        >
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.90) 100%)', zIndex: 0 }}></div>
-          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <SectionHeader
-              tag="The Zylo Difference"
-              title={<>Why Leading Brands <span style={{ color: 'var(--brand)' }}>Choose Zylo</span></>}
-              subtitle="We combine unparalleled scale with bespoke experiential design to deliver world-class corporate environments."
-              white={true}
-            />
+        {/* The Zylo Difference - Editorial Bento Theme */}
+        <section className="section-pad-lg bento-section">
+          <div className="container">
+            <div className="bento-header text-center reveal">
+              <span className="bento-tag">The Zylo Difference</span>
+              <h2 className="bento-title">
+                Why Leading Brands <span className="bento-highlight">Choose Zylo</span>
+              </h2>
+              <p className="bento-subtitle">
+                We combine unparalleled scale with bespoke experiential design to deliver world-class corporate environments.
+              </p>
+            </div>
 
-            <div className="zylo-difference-grid reveal">
-              {zyloDifferences.map((item, idx) => (
-                <div key={idx} className="zylo-difference-card dark-glass">
-                  <div className="zylo-watermark-number">{item.id}</div>
-                  <div className="zylo-difference-icon">
-                    {item.icon}
+            <div className="bento-grid reveal">
+              {zyloDifferences.map((item, idx) => {
+                // Dynamically assign classes and background images based on index for the bento layout
+                let extraClass = '';
+                let bgImage = null;
+
+                if (idx === 0) {
+                  extraClass = 'bento-hero';
+                  bgImage = 'url(https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80)';
+                } else if (idx === 3) {
+                  extraClass = 'bento-wide';
+                } else if (idx === 5) {
+                  extraClass = 'bento-panoramic';
+                  bgImage = 'url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80)';
+                }
+
+                return (
+                  <div key={idx} className={`bento-card ${extraClass}`}>
+                    {bgImage && (
+                      <div className="bento-bg-image" style={{ backgroundImage: bgImage }}></div>
+                    )}
+                    <div className="bento-card-inner">
+                      <div className="bento-icon-wrapper">
+                        {item.icon}
+                      </div>
+                      <div className="bento-card-content">
+                        <h4 className="bento-card-title">{item.title}</h4>
+                        <p className="bento-card-desc">{item.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="zylo-difference-content">
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
