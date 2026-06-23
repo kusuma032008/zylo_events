@@ -266,7 +266,7 @@ export default function Home() {
                   </div>
                   <div>
                     <strong>Email Us</strong>
-                    <span><a href="mailto:hello@zyloevents.com">hello@zyloevents.com</a></span>
+                    <span><a href="mailto:hello@zylo.events">hello@zylo.events</a></span>
                   </div>
                 </div>
               </div>

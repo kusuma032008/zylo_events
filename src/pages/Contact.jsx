@@ -128,7 +128,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--text-dark)' }}>Email Us</h4>
-                  <a href="mailto:hello@zyloevents.com" style={{ color: 'var(--brand)', fontWeight: '600', fontSize: '0.93rem' }}>hello@zyloevents.com</a>
+                  <a href="mailto:hello@zylo.events" style={{ color: 'var(--brand)', fontWeight: '600', fontSize: '0.93rem' }}>hello@zylo.events</a>
                   <p style={{ color: 'var(--gray-text)', fontSize: '0.82rem', marginTop: '4px' }}>We reply within 24 hours</p>
                 </div>
               </div>
