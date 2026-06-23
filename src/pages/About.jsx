@@ -421,7 +421,7 @@ const fetchEmployees = async () => {
               {zyloDifferences.map((item, idx) => {
                 // Array of high-quality event images for each card
                 const images = [
-                  'https://images.unsplash.com/photo-1511578314322-379f0747dda4?w=1200&q=80', // Industry Excellence (Elegant Stage)
+                  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80', // Industry Excellence (Elegant corporate event)
                   'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&q=80', // Event Execution (Production setup)
                   'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80', // Pan-India (City Skyline)
                   'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80', // Bespoke / Experiential
