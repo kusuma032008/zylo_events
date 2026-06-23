@@ -89,31 +89,60 @@ import Button from '../components/shared/Button';
 
 // ];
 
-const awards = [
+const zyloDifferences = [
   {
-    num: '01',
-    title: 'Best Corporate Event Company — South India 2024',
-    desc: 'Awarded by the Event & Entertainment Management Association (EEMA) at their annual conclave in Mumbai.'
+    id: '01',
+    title: '14+ Years of Industry Excellence',
+    desc: 'Delivering premium corporate and experiential events since 2011.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg>
+    )
   },
   {
-    num: '02',
-    title: 'ISO 9001:2015 Certified — Event Management Services',
-    desc: 'Certified for our quality management systems across event planning, production, and post-event services.'
+    id: '02',
+    title: 'End-to-End Event Execution',
+    desc: 'Strategy, design, production, fabrication, logistics, and flawless on-ground execution under one roof.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        <polyline points="2 17 12 22 22 17"></polyline>
+        <polyline points="2 12 12 17 22 12"></polyline>
+      </svg>
+    )
   },
   {
-    num: '03',
-    title: 'Top 10 Event Companies in India — EventFaqs 2023',
-    desc: 'Featured in EventFaqs Media\'s prestigious annual ranking of India\'s leading event management companies.'
+    id: '03',
+    title: 'Pan-India Operations',
+    desc: 'Successfully executing events across major cities in India.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+    )
   },
   {
-    num: '04',
-    title: '4.9★ Google Rating — 320+ Verified Reviews',
-    desc: 'Consistently rated 5 stars by clients across all event categories for quality, professionalism, and creativity.'
+    id: '04',
+    title: 'Bespoke & Experiential Approach',
+    desc: 'Every event is uniquely designed to create memorable brand experiences.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+    )
   },
   {
-    num: '05',
-    title: 'Preferred Vendor — 15+ Fortune 500 Companies',
-    desc: 'Empanelled as the preferred event partner by leading Indian and multinational corporations.'
+    id: '05',
+    title: 'Trusted by Leading Enterprises',
+    desc: 'Preferred partner for corporate conferences, leadership summits, product launches, and brand activations.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+    )
   }
 ];
 
@@ -362,22 +391,34 @@ const fetchEmployees = async () => {
           </div>
         </section>
 
-        {/* Recognition / Awards */}
-        <section className="section-pad-lg awards-section">
-          <div className="container">
+        {/* The Zylo Difference */}
+        <section 
+          className="section-pad-lg zylo-difference-section"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1600&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            position: 'relative'
+          }}
+        >
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(248,250,252,0.95) 0%, rgba(248,250,252,0.85) 100%)', zIndex: 0 }}></div>
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <SectionHeader
-              tag="Recognition"
-              title={<>Awards &amp; <span style={{ color: 'var(--brand)' }}>Recognition</span></>}
-              subtitle="Our work has been recognised by the industry's most prestigious organisations."
+              tag="The Zylo Difference"
+              title={<>Why Leading Brands <span style={{ color: 'var(--brand)' }}>Choose Zylo</span></>}
+              subtitle="We combine unparalleled scale with bespoke experiential design to deliver world-class corporate environments."
             />
 
-            <div className="awards-list reveal">
-              {awards.map((award, idx) => (
-                <div key={idx} className="award-item">
-                  <div className="award-num">{award.num}</div>
-                  <div>
-                    <h4>{award.title}</h4>
-                    <p>{award.desc}</p>
+            <div className="zylo-difference-grid reveal">
+              {zyloDifferences.map((item, idx) => (
+                <div key={idx} className="zylo-difference-card">
+                  <div className="zylo-difference-icon">
+                    {item.icon}
+                  </div>
+                  <div className="zylo-difference-content">
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
                   </div>
                 </div>
               ))}
