@@ -421,11 +421,11 @@ const fetchEmployees = async () => {
               {zyloDifferences.map((item, idx) => {
                 // Array of high-quality event images for each card
                 const images = [
-                  'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80', // Elegant dining/gala setup
-                  'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80', // Stage production
-                  'https://images.unsplash.com/photo-1475721025505-c31da3173a45?w=1200&q=80', // Pan India / Skyline/Audience
-                  'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&q=80', // Experiential / Bespoke
-                  'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&q=80', // Enterprises / Summit
+                  'https://images.unsplash.com/photo-1561489413-985b06da5bee?w=1200&q=80', // Award / Industry Excellence
+                  'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1200&q=80', // Stage production
+                  'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200&q=80', // Pan India / Audience
+                  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80', // Experiential / Bespoke
+                  'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=1200&q=80', // Enterprises / Summit
                   'https://images.unsplash.com/photo-1522158637959-30385a09e0aa?w=1200&q=80'  // On-ground Support / Crew
                 ];
                 

@@ -2706,8 +2706,8 @@ input, textarea, select { font-family: inherit; }
 .stacking-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding-bottom: 200px; /* Room to scroll past the final stacked card */
+  gap: 32px;
+  padding-bottom: 80px; /* Reduced gap at the end */
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -2715,10 +2715,8 @@ input, textarea, select { font-family: inherit; }
 
 .stack-card {
   position: sticky;
-  height: 65vh;
-  min-height: 450px;
-  max-height: 700px;
-  border-radius: 32px;
+  height: 480px; /* Fixed height for consistent look */
+  border-radius: 24px;
   background: #ffffff; /* Pure white cards */
   border: 1px solid #f1f5f9;
   border-top: 1px solid #ffffff; /* Glow top edge */
@@ -2728,15 +2726,16 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* Stacking offsets to create the layered look */
-.stack-card-1 { top: 100px; z-index: 1; }
-.stack-card-2 { top: 130px; z-index: 2; }
-.stack-card-3 { top: 160px; z-index: 3; }
-.stack-card-4 { top: 190px; z-index: 4; }
-.stack-card-5 { top: 220px; z-index: 5; }
-.stack-card-6 { top: 250px; z-index: 6; }
+.stack-card-1 { top: 120px; z-index: 1; }
+.stack-card-2 { top: 150px; z-index: 2; }
+.stack-card-3 { top: 180px; z-index: 3; }
+.stack-card-4 { top: 210px; z-index: 4; }
+.stack-card-5 { top: 240px; z-index: 5; }
+.stack-card-6 { top: 270px; z-index: 6; }
 
 .stack-card-inner {
   display: flex;
+  flex-direction: row;
   height: 100%;
   width: 100%;
 }
@@ -2753,37 +2752,37 @@ input, textarea, select { font-family: inherit; }
 
 .stack-watermark {
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 40px;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 8rem;
+  font-size: 10rem;
   line-height: 1;
-  color: #f8fafc; /* Extremely subtle watermark */
+  color: #e2e8f0; /* Darker to be clearly visible */
   font-style: italic;
   pointer-events: none;
 }
 
 .stack-icon-wrapper {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   color: #2563eb; /* Brand Blue */
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
+  border-radius: 14px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   position: relative;
   z-index: 2;
 }
 
 .stack-card-title {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.2;
   position: relative;
   z-index: 2;
@@ -2792,8 +2791,8 @@ input, textarea, select { font-family: inherit; }
 .stack-card-desc {
   font-size: 1.1rem;
   color: #475569;
-  line-height: 1.8;
-  max-width: 90%;
+  line-height: 1.7;
+  max-width: 95%;
   position: relative;
   z-index: 2;
 }
@@ -2812,21 +2811,27 @@ input, textarea, select { font-family: inherit; }
   background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0.4) 15%, transparent 40%);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .stack-card {
+    height: auto;
+    min-height: 500px;
+  }
   .stack-card-inner {
     flex-direction: column;
   }
   .stack-card-content {
-    padding: 40px;
+    padding: 40px 30px;
+    flex: none;
   }
   .stack-card-image {
     min-height: 250px;
+    flex: none;
   }
   .stack-card-image-overlay {
     background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.4) 15%, transparent 40%);
   }
   .stack-card-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
