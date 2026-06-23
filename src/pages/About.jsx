@@ -410,7 +410,7 @@ const fetchEmployees = async () => {
             <div className="stacking-header text-center reveal">
               <span className="stacking-tag">The Zylo Difference</span>
               <h2 className="stacking-title">
-                Why Leading Brands Choose Zylo
+                Why Leading Brands <br /> Choose <span>Zylo</span>
               </h2>
               <p className="stacking-subtitle">
                 We combine unparalleled scale with bespoke experiential design to deliver world-class corporate environments.

@@ -2668,10 +2668,14 @@ input, textarea, select { font-family: inherit; }
 }
 
 .stacking-header {
-  margin-bottom: 120px;
+  margin-bottom: 100px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .stacking-tag {
@@ -2680,27 +2684,34 @@ input, textarea, select { font-family: inherit; }
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #2563eb; /* Brand Blue */
+  letter-spacing: 0.25em;
+  color: #fbbf24; /* Premium Gold Accent */
   margin-bottom: 24px;
 }
 
 .stacking-title {
-  font-family: var(--font-heading);
-  font-size: 4rem;
-  font-weight: 700;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.5rem;
+  font-weight: 600;
   color: #0f172a; /* Slate 900 */
   margin-bottom: 24px;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+}
+
+.stacking-title span {
+  font-style: italic;
+  color: #2563eb; /* Brand Blue */
+  font-weight: 700;
 }
 
 .stacking-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #475569; /* Slate 600 */
   line-height: 1.6;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 300;
 }
 
 .stacking-container {
