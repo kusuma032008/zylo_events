@@ -2793,6 +2793,7 @@ input, textarea, select { font-family: inherit; }
   font-size: 2.2rem;
   font-weight: 700;
   color: #0f172a;
+  margin-top: 80px;
   margin-bottom: 16px;
   line-height: 1.2;
   position: relative;

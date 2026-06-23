@@ -434,9 +434,6 @@ const fetchEmployees = async () => {
                     <div className="stack-card-inner">
                       <div className="stack-card-content">
                         <div className="stack-watermark">0{idx + 1}</div>
-                        <div className="stack-icon-wrapper">
-                          {item.icon}
-                        </div>
                         <h4 className="stack-card-title">{item.title}</h4>
                         <p className="stack-card-desc">{item.desc}</p>
                       </div>
