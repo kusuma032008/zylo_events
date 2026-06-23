@@ -406,7 +406,7 @@ const fetchEmployees = async () => {
 
         {/* The Zylo Difference */}
         <section 
-          className="section-pad-lg zylo-difference-section"
+          className="section-pad-lg zylo-difference-section bg-dark"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1600&q=80')`,
             backgroundSize: 'cover',
@@ -415,17 +415,19 @@ const fetchEmployees = async () => {
             position: 'relative'
           }}
         >
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(248,250,252,0.95) 0%, rgba(248,250,252,0.85) 100%)', zIndex: 0 }}></div>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.90) 100%)', zIndex: 0 }}></div>
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <SectionHeader
               tag="The Zylo Difference"
               title={<>Why Leading Brands <span style={{ color: 'var(--brand)' }}>Choose Zylo</span></>}
               subtitle="We combine unparalleled scale with bespoke experiential design to deliver world-class corporate environments."
+              white={true}
             />
 
             <div className="zylo-difference-grid reveal">
               {zyloDifferences.map((item, idx) => (
-                <div key={idx} className="zylo-difference-card">
+                <div key={idx} className="zylo-difference-card dark-glass">
+                  <div className="zylo-watermark-number">{item.id}</div>
                   <div className="zylo-difference-icon">
                     {item.icon}
                   </div>

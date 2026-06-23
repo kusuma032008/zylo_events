@@ -2659,16 +2659,17 @@ input, textarea, select { font-family: inherit; }
   100% { transform: rotate(360deg); }
 }
 
-/* The Zylo Difference Section */
+/* The Zylo Difference Section - Dark Luxury Theme */
 .zylo-difference-section {
-  background: var(--white);
+  background: #0B0F19; /* Deep midnight premium background */
   position: relative;
+  overflow: hidden;
 }
 
 .zylo-difference-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 32px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -2681,75 +2682,98 @@ input, textarea, select { font-family: inherit; }
   .zylo-difference-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-.zylo-difference-card {
-  background: rgba(255, 255, 255, 0.6);
+.zylo-difference-card.dark-glass {
+  background: rgba(30, 41, 59, 0.4);
   border-radius: var(--radius-lg);
-  padding: 32px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(59, 130, 246, 0.08);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 40px 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
-.zylo-difference-card::before {
+.zylo-difference-card.dark-glass::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+  background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
   z-index: -1;
 }
 
-.zylo-difference-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12);
-  border-color: rgba(59, 130, 246, 0.2);
+.zylo-difference-card.dark-glass:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 40px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
-.zylo-difference-card:hover::before {
+.zylo-difference-card.dark-glass:hover::before {
   opacity: 1;
 }
 
+.zylo-watermark-number {
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-sans);
+  z-index: -1;
+  pointer-events: none;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.zylo-difference-card.dark-glass:hover .zylo-watermark-number {
+  color: rgba(59, 130, 246, 0.08);
+  transform: translateY(-10px);
+}
+
 .zylo-difference-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: rgba(59, 130, 246, 0.08);
-  color: var(--brand);
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #60A5FA; /* Brighter blue for dark background */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 8px;
-  transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-.zylo-difference-card:hover .zylo-difference-icon {
-  transform: scale(1.1);
-  background: var(--brand);
+.zylo-difference-card.dark-glass:hover .zylo-difference-icon {
+  transform: scale(1.15) rotate(5deg);
+  background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
   color: var(--white);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+  border-color: transparent;
 }
 
 .zylo-difference-content h4 {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #F8FAFC; /* Off-white for better readability on dark */
   margin-bottom: 12px;
   line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .zylo-difference-content p {
   font-size: 0.95rem;
-  color: var(--text-light);
-  line-height: 1.6;
+  color: #94A3B8; /* Slate light for secondary text */
+  line-height: 1.7;
 }
 
 /* ══════════════════════════════════════════════════════
