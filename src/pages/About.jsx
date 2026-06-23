@@ -404,52 +404,31 @@ const fetchEmployees = async () => {
           </div>
         </section>
 
-        {/* The Zylo Difference - Editorial Bento Theme */}
-        <section className="section-pad-lg bento-section">
-          <div className="container">
-            <div className="bento-header text-center reveal">
-              <span className="bento-tag">The Zylo Difference</span>
-              <h2 className="bento-title">
-                Why Leading Brands <span className="bento-highlight">Choose Zylo</span>
+        {/* The Zylo Difference - Editorial Split-Screen Theme */}
+        <section className="split-editorial-section">
+          <div className="split-visual">
+            <div className="split-visual-overlay"></div>
+            <div className="split-visual-content">
+              <span className="split-tag reveal">The Zylo Difference</span>
+              <h2 className="split-title reveal">
+                Why Leading Brands Choose Zylo
               </h2>
-              <p className="bento-subtitle">
+              <p className="split-subtitle reveal">
                 We combine unparalleled scale with bespoke experiential design to deliver world-class corporate environments.
               </p>
             </div>
-
-            <div className="bento-grid reveal">
-              {zyloDifferences.map((item, idx) => {
-                // Dynamically assign classes and background images based on index for the bento layout
-                let extraClass = '';
-                let bgImage = null;
-
-                if (idx === 0) {
-                  extraClass = 'bento-hero';
-                  bgImage = 'url(https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80)';
-                } else if (idx === 3) {
-                  extraClass = 'bento-wide';
-                } else if (idx === 5) {
-                  extraClass = 'bento-panoramic';
-                  bgImage = 'url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600&q=80)';
-                }
-
-                return (
-                  <div key={idx} className={`bento-card ${extraClass}`}>
-                    {bgImage && (
-                      <div className="bento-bg-image" style={{ backgroundImage: bgImage }}></div>
-                    )}
-                    <div className="bento-card-inner">
-                      <div className="bento-icon-wrapper">
-                        {item.icon}
-                      </div>
-                      <div className="bento-card-content">
-                        <h4 className="bento-card-title">{item.title}</h4>
-                        <p className="bento-card-desc">{item.desc}</p>
-                      </div>
-                    </div>
+          </div>
+          <div className="split-content-wrapper">
+            <div className="split-content-inner">
+              {zyloDifferences.map((item, idx) => (
+                <div key={idx} className="editorial-item reveal">
+                  <div className="editorial-number">0{idx + 1}</div>
+                  <div className="editorial-text">
+                    <h4 className="editorial-item-title">{item.title}</h4>
+                    <p className="editorial-item-desc">{item.desc}</p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>
