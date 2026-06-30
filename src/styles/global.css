@@ -1662,12 +1662,13 @@ input, textarea, select { font-family: inherit; }
   font-weight: 900;
   background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
   letter-spacing: -2px;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(4px 0px 8px rgba(0,0,0,0.25));
+  filter: drop-shadow(4px 0 8px rgba(0,0,0,0.25));
 }
 
 .zp-p {
@@ -1676,6 +1677,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 900;
   background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
   margin-left: -12px;
@@ -2657,53 +2659,193 @@ input, textarea, select { font-family: inherit; }
   100% { transform: rotate(360deg); }
 }
 
-/* Awards section */
-.awards-list {
+/* The Zylo Difference Section - Interactive Stacking Cards Theme (Light Luxury) */
+.stacking-section {
+  padding: 80px 0 40px 0; /* Reduced top/bottom padding */
+  background: #f8fafc; /* Pristine, soft slate-white background */
+  position: relative;
+  overflow: visible; /* Cards need to stick relative to this container */
+}
+
+.stacking-header {
+  margin-bottom: 40px; /* Greatly reduced gap between header and first card */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  align-items: center;
 }
 
-.award-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-solid);
-  transition: box-shadow var(--transition), transform var(--transition);
-}
-
-.award-item:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateX(4px);
-}
-
-.award-num {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #2563EB;
-  line-height: 1;
-  flex-shrink: 0;
-  width: 48px;
-  opacity: 1;
-}
-
-.award-item h4 {
-  font-family: var(--font-heading);
-  font-size: 1rem;
+.stacking-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #fbbf24; /* Premium Gold Accent */
+  margin-bottom: 16px; /* Reduced */
+}
+
+.stacking-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #0f172a; /* Slate 900 */
+  margin-bottom: 16px; /* Reduced */
+  line-height: 1.1;
   letter-spacing: -0.01em;
 }
 
-.award-item p { font-size: 0.87rem; color: var(--text-light); }
+.stacking-title span {
+  font-style: italic;
+  color: #2563eb; /* Brand Blue */
+  font-weight: 700;
+}
+
+.stacking-subtitle {
+  font-size: 1.25rem;
+  color: #475569; /* Slate 600 */
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.stacking-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 20px; /* Greatly reduced gap at the end */
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.stack-card {
+  position: sticky;
+  height: 480px; /* Fixed height for consistent look */
+  border-radius: 24px;
+  background: #ffffff; /* Pure white cards */
+  border: 1px solid #f1f5f9;
+  border-top: 1px solid #ffffff; /* Glow top edge */
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.03), 0 20px 50px rgba(0, 0, 0, 0.08); /* Soft, airy shadows */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Stacking offsets to create the layered look */
+.stack-card-1 { top: 120px; z-index: 1; }
+.stack-card-2 { top: 150px; z-index: 2; }
+.stack-card-3 { top: 180px; z-index: 3; }
+.stack-card-4 { top: 210px; z-index: 4; }
+.stack-card-5 { top: 240px; z-index: 5; }
+.stack-card-6 { top: 270px; z-index: 6; }
+
+.stack-card-inner {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.stack-card-content {
+  flex: 1;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: #ffffff;
+}
+
+.stack-watermark {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 10rem;
+  line-height: 1;
+  color: #e2e8f0; /* Darker to be clearly visible */
+  font-style: italic;
+  pointer-events: none;
+}
+
+.stack-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  color: #2563eb; /* Brand Blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.stack-card-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 80px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+}
+
+.stack-card-desc {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.7;
+  max-width: 95%;
+  position: relative;
+  z-index: 2;
+}
+
+.stack-card-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.stack-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  /* Smooth blend from white text-area to the photo */
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0.4) 15%, transparent 40%);
+}
+
+@media (max-width: 768px) {
+  .stack-card {
+    height: auto;
+    min-height: 500px;
+  }
+  .stack-card-inner {
+    flex-direction: column;
+  }
+  .stack-card-content {
+    padding: 40px 30px;
+    flex: none;
+  }
+  .stack-card-image {
+    min-height: 250px;
+    flex: none;
+  }
+  .stack-card-image-overlay {
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.4) 15%, transparent 40%);
+  }
+  .stack-card-title {
+    font-size: 1.8rem;
+  }
+}
 
 /* ══════════════════════════════════════════════════════
    SERVICE DETAIL PAGE
