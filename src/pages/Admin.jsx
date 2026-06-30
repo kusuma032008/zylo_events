@@ -13,138 +13,148 @@ import {
 export default function Admin() {
   const [employees, setEmployees] = useState([]);
   const handleLogout = async () => {
-  await signOut(auth);
-};
-const [form, setForm] = useState({
-  name: '',
-  role: '',
-  description: '',
-  image: '',
-  order: ''
-});
-
-const [imageFile, setImageFile] = useState(null);
-const [editingId, setEditingId] = useState(null);
-const employeesCollection = collection(db, 'employees');
-
-useEffect(() => {
-  fetchEmployees();
-}, []);
-
-const fetchEmployees = async () => {
-  const data = await getDocs(employeesCollection);
-
-  setEmployees(
-    data.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data()
-    }))
-  );
-};
-const handleChange = (e) => {
-  setForm({
-    ...form,
-    [e.target.name]: e.target.value
+    await signOut(auth);
+  };
+  const [form, setForm] = useState({
+    name: '',
+    role: '',
+    description: '',
+    image: '',
+    order: ''
   });
-};
 
-const editEmployee = (employee) => {
-  setEditingId(employee.id);
+  const [imageFile, setImageFile] = useState(null);
+  const [editingId, setEditingId] = useState(null);
+  const employeesCollection = collection(db, 'employees');
 
-  setForm({
-    name: employee.name || '',
-    role: employee.role || '',
-    description: employee.description || '',
-    image: employee.image || '',
-    order: employee.order || ''
-  });
-};
+  useEffect(() => {
+    fetchEmployees();
+  }, []);
 
-const addEmployee = async (e) => {
-  e.preventDefault();
+  const fetchEmployees = async () => {
+    try {
+      const data = await getDocs(employeesCollection);
 
-  if (!form.name || !form.role) {
-    alert('Please fill required fields');
-    return;
-  }
+      console.log("Documents found:", data.docs.length);
 
-  let imageUrl = '';
+      data.docs.forEach((doc) => {
+        console.log("Employee:", doc.id, doc.data());
+      });
 
-  if (imageFile) {
-    const data = new FormData();
+      setEmployees(
+        data.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+      );
+    } catch (error) {
+      console.error("Firestore Error:", error);
+    }
+  };
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
 
-    data.append('file', imageFile);
-    data.append('upload_preset', 'zylo-employees');
+  const editEmployee = (employee) => {
+    setEditingId(employee.id);
 
-    const response = await fetch(
-      'https://api.cloudinary.com/v1_1/dgjcon69o/image/upload',
-      {
-        method: 'POST',
-        body: data
-      }
-    );
+    setForm({
+      name: employee.name || '',
+      role: employee.role || '',
+      description: employee.description || '',
+      image: employee.image || '',
+      order: employee.order || ''
+    });
+  };
 
-    const uploadedImage = await response.json();
+  const addEmployee = async (e) => {
+    e.preventDefault();
 
-    imageUrl = uploadedImage.secure_url;
-  }
+    if (!form.name || !form.role) {
+      alert('Please fill required fields');
+      return;
+    }
 
- if (editingId) {
+    let imageUrl = '';
 
-  const employeeDoc = doc(db, 'employees', editingId);
+    if (imageFile) {
+      const data = new FormData();
 
- await updateDoc(employeeDoc, {
-  name: form.name,
-  role: form.role,
-  description: form.description,
-  image: imageUrl || form.image,
-  order: Number(form.order)
-});
+      data.append('file', imageFile);
+      data.append('upload_preset', 'zylo-employees');
 
-} else {
+      const response = await fetch(
+        'https://api.cloudinary.com/v1_1/dgjcon69o/image/upload',
+        {
+          method: 'POST',
+          body: data
+        }
+      );
 
-await addDoc(employeesCollection, {
-  name: form.name,
-  role: form.role,
-  description: form.description,
-  image: imageUrl,
-  order: Number(form.order)
-});
-}
+      const uploadedImage = await response.json();
 
- setForm({
-  name: '',
-  role: '',
-  description: '',
-  image: '',
-  order: ''
-});
+      imageUrl = uploadedImage.secure_url;
+    }
 
-  setImageFile(null);
-  setEditingId(null);
-  fetchEmployees();
-};
+    if (editingId) {
+
+      const employeeDoc = doc(db, 'employees', editingId);
+
+      await updateDoc(employeeDoc, {
+        name: form.name,
+        role: form.role,
+        description: form.description,
+        image: imageUrl || form.image,
+        order: Number(form.order)
+      });
+
+    } else {
+
+      await addDoc(employeesCollection, {
+        name: form.name,
+        role: form.role,
+        description: form.description,
+        image: imageUrl,
+        order: Number(form.order)
+      });
+    }
+
+    setForm({
+      name: '',
+      role: '',
+      description: '',
+      image: '',
+      order: ''
+    });
+
+    setImageFile(null);
+    setEditingId(null);
+    fetchEmployees();
+  };
 
   const deleteEmployee = async (id) => {
-  const employeeDoc = doc(db, 'employees', id);
+    const employeeDoc = doc(db, 'employees', id);
 
-  await deleteDoc(employeeDoc);
+    await deleteDoc(employeeDoc);
 
-  fetchEmployees();
-};
+    fetchEmployees();
+  };
 
   return (
     <div style={{ padding: '40px' }}>
-        <button
-            onClick={handleLogout}
-            style={{
-                marginBottom: '20px',
-                padding: '10px 20px',
-                cursor: 'pointer'
-            }}
-            >
-            Logout
-        </button>
+      <button
+        onClick={handleLogout}
+        style={{
+          marginBottom: '20px',
+          padding: '10px 20px',
+          cursor: 'pointer'
+        }}
+      >
+        Logout
+      </button>
       <h1>Zylo Admin Dashboard</h1>
 
       <form
@@ -185,14 +195,14 @@ await addDoc(employeesCollection, {
           onChange={handleChange}
         />
         <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => setImageFile(e.target.files[0])}
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImageFile(e.target.files[0])}
         />
 
 
         <button type="submit">
-         {editingId ? 'Update Employee' : 'Add Employee'}
+          {editingId ? 'Update Employee' : 'Add Employee'}
         </button>
       </form>
 
@@ -216,17 +226,17 @@ await addDoc(employeesCollection, {
           <div style={{ display: 'flex', gap: '10px' }}>
 
             <button
-                type="button"
-                onClick={() => editEmployee(emp)}
+              type="button"
+              onClick={() => editEmployee(emp)}
             >
-                Edit
+              Edit
             </button>
 
             <button
-                type="button"
-                onClick={() => deleteEmployee(emp.id)}
+              type="button"
+              onClick={() => deleteEmployee(emp.id)}
             >
-                Delete
+              Delete
             </button>
 
           </div>
